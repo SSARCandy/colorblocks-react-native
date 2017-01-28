@@ -61,6 +61,7 @@ export default class QuestionsList extends Component {
             <View key={idx} style={styles.container}>
               <Question
                 focus={idx === index}
+                unfocus={idx+1 === index}
                 color={color}
                 result={state}
               />
@@ -77,7 +78,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   container: {
-    margin: 20
+    margin: 15
   }
-
 });

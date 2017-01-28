@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
+import * as Animatable from 'react-native-animatable';
 import { StyleSheet, Text, View, Animated } from 'react-native';
 import { KEY_COLOR_MAP, COLOR_MAP, COLOR_LABEL_MAP } from '../constants';
+
+const zoomOut = {
+  from: { scale: 1.5 },
+  to: { scale: 1 },
+};
+const zoomIn = {
+  from: { scale: 1 },
+  to: { scale: 1.5 },
+};
 
 
 export default class Question extends Component {
@@ -9,11 +19,11 @@ export default class Question extends Component {
   }
 
   render() {
-    const {color, result, bonus, focus} = this.props;
+    const {color, result, bonus, focus, unfocus} = this.props;
     const resultStyle = result == 'correct' ? 'green' : 'red';
     const icon = result == 'correct' ? '✔' : '✘';
     const transform = { transform: [{ scale: 1.5 }] };
-    let style = {
+    const style = {
       color: COLOR_MAP[color[0]],
       backgroundColor: COLOR_MAP[color[1]],
       width: 100,
@@ -22,13 +32,25 @@ export default class Question extends Component {
       textAlign: 'center'
     };
 
+    let transition = '';
+    if (focus) transition = zoomIn;
+    if (unfocus) transition = zoomOut;
+
     return (
       <View style={styles.questionWrap}>
-        <Animated.View style={focus ? transform : styles.masked}>
-          <Animated.Text style={focus ? [style, transform] : [style, {opacity: 0.5}]}>
+        <Animatable.View
+          animation={transition || ''}
+          duration={500}
+          style={focus ? {} : styles.masked}
+        >
+          <Animatable.Text
+            animation={transition || ''}
+            duration={500}
+            style={focus ? style : [style, {opacity: 0.5}]}
+          >
             {COLOR_LABEL_MAP[color[2]]}
-          </Animated.Text>
-        </Animated.View>
+          </Animatable.Text>
+        </Animatable.View>
         {!!result && (<Text style={[styles.icon, {color: resultStyle}]}>{icon}</Text>)}
       </View>
     );

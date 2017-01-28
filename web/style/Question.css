@@ -1,0 +1,31 @@
+.question-wrap {
+    width: 100px;
+    /*margin: 0 auto;*/
+    padding: 20px;
+    transition: all .4s ease-out;
+}
+
+.question {
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.green {
+    font-size: 30px;
+    position: relative;
+    left: 80px;
+    top: -25px;
+    text-shadow: -1px -1px 9px black;
+    color: green;
+}
+
+.red {
+    font-size: 30px;
+    position: relative;
+    left: 80px;
+    top: -25px;
+    text-shadow: -1px -1px 9px black;
+    color: red;
+}
+

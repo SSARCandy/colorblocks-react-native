@@ -22,14 +22,10 @@ export default class Question extends Component {
       textAlign: 'center'
     };
 
-    if (focus) {
-      style = Object.assign(style, transform);
-    }
-
     return (
       <View style={styles.questionWrap}>
         <Animated.View style={focus ? transform : styles.masked}>
-          <Animated.Text style={style}>
+          <Animated.Text style={focus ? [style, transform] : [style, {opacity: 0.5}]}>
             {COLOR_LABEL_MAP[color[2]]}
           </Animated.Text>
         </Animated.View>
@@ -47,7 +43,6 @@ const styles = StyleSheet.create({
   },
   masked: {
     backgroundColor: 'black',
-    opacity: 0.3,
   },
   icon: {
     position: 'absolute',

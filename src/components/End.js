@@ -28,10 +28,10 @@ export default class End extends Component {
           </Text>
           {answered > 0 && (
             <View style={styles.staticWrap}>
-              <Text>Total Questions: {answered} </Text>
-              <Text>Correct: {correct} </Text>
-              <Text>Wrong: {answered - correct} </Text>
-              <Text>Accuracy: {Math.round((correct / answered) * 100)}% </Text>
+              <Text style={styles.staticText}>Total Questions: {answered} </Text>
+              <Text style={styles.staticText}>Correct: {correct} </Text>
+              <Text style={styles.staticText}>Wrong: {answered - correct} </Text>
+              <Text style={styles.staticText}>Accuracy: {Math.round((correct / answered) * 100)}% </Text>
             </View>
           )}
           <View style={styles.startBtnWrap}>
@@ -73,5 +73,9 @@ const styles = StyleSheet.create({
   staticWrap: {
     margin: 10,
     alignItems: 'center'
+  },
+  staticText: {
+    fontSize: 18,
+    fontWeight: '500'
   }
 })

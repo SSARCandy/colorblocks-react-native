@@ -33,6 +33,7 @@ export default class Question extends Component {
             {COLOR_LABEL_MAP[color[2]]}
           </Animated.Text>
         </Animated.View>
+        {!!result && (<Text style={[styles.icon, {color: resultStyle}]}>{icon}</Text>)}
       </View>
     );
   }
@@ -42,10 +43,21 @@ const styles = StyleSheet.create({
   questionWrap: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   masked: {
     backgroundColor: 'black',
-    opacity:0.5
+    opacity: 0.3,
+  },
+  icon: {
+    position: 'absolute',
+    right: -5,
+    fontSize: 24,
+    textShadowColor: 'black',
+    textShadowRadius: 10,
+    textShadowOffset: {
+      width: 3,
+      height: 3
+    },
   }
 });

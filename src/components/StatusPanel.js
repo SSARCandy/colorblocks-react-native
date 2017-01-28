@@ -24,7 +24,10 @@ export default class StatusPanel extends Component {
 
     return (
       <View>
-        <Text style={timebarStyle}></Text>
+        <Animatable.Text
+          transition='width'
+          style={timebarStyle}
+        />
         <View style={styles.statusWrap}>
           <Text style={styles.status}>Scores: {score}</Text>
           {bonus && (

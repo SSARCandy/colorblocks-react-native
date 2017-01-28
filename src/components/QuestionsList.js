@@ -18,7 +18,7 @@ export default class QuestionsList extends Component {
     return (
       <Animatable.View
         transition='left'
-        easing='ease-in-out-cubic'
+        easing='ease-in-out'
         duration={500}
         style={[styles.listContainer, {left: middle - offset}]}
       >

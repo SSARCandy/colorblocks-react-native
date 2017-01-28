@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native';
-import StatusPanel from './StatusPanel';
-import QuestionsList from './QuestionsList';
-import ArrowKey from './ArrowKey';
-import End from './End';
-import { initial_state, shuffle } from './utils';
-import { KEY_COLOR_MAP, COMBO_THRES, COMBO_BONUS, INIT_TIME } from './constants';
+import StatusPanel from './src/StatusPanel';
+import QuestionsList from './src/QuestionsList';
+import ArrowKey from './src/ArrowKey';
+import End from './src/End';
+import { initial_state, shuffle } from './src/utils';
+import { KEY_COLOR_MAP, COMBO_THRES, COMBO_BONUS, INIT_TIME } from './src/constants';
 
 export default class colorblocksRN extends Component {
   constructor(props) {

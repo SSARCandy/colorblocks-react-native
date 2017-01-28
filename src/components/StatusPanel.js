@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
-import { INIT_TIME, COMBO_BONUS } from './constants';
+import { INIT_TIME, COMBO_BONUS } from '../constants';
 
 export default class StatusPanel extends Component {
   constructor(props){

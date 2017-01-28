@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Animated } from 'react-native';
-import { KEY_COLOR_MAP, COLOR_MAP, COLOR_LABEL_MAP } from './constants';
+import { KEY_COLOR_MAP, COLOR_MAP, COLOR_LABEL_MAP } from '../constants';
 
 
 export default class Question extends Component {

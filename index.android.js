@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native';
-import StatusPanel from './src/StatusPanel';
-import QuestionsList from './src/QuestionsList';
-import ArrowKey from './src/ArrowKey';
-import End from './src/End';
+import StatusPanel from './src/components/StatusPanel';
+import QuestionsList from './src/components/QuestionsList';
+import ArrowKey from './src/components/ArrowKey';
+import End from './src/components/End';
 import { initial_state, shuffle } from './src/utils';
 import { KEY_COLOR_MAP, COMBO_THRES, COMBO_BONUS, INIT_TIME } from './src/constants';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import {INIT_TIME, COMBO_THRES} from './constants';
+import {INIT_TIME, COMBO_THRES} from '../constants';
 
 export default class End extends Component {
   constructor(props) {

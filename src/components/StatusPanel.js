@@ -23,7 +23,7 @@ export default class StatusPanel extends Component {
     };
 
     return (
-      <View style={styles.statusContainer}>
+      <View>
         <Text style={timebarStyle}></Text>
         <View style={styles.statusWrap}>
           <Text style={styles.status}>Scores: {score}</Text>
@@ -43,9 +43,6 @@ export default class StatusPanel extends Component {
 }
 
 const styles = StyleSheet.create({
-  statusContainer: {
-    
-  },
   status: {
     fontSize: 16,
     fontWeight: '700',
@@ -58,7 +55,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    //alignItems: 'center',
     margin: 20,
   },
   bonus: {

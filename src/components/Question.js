@@ -22,7 +22,6 @@ export default class Question extends Component {
     const {color, result, bonus, focus, unfocus} = this.props;
     const resultStyle = result == 'correct' ? 'green' : 'red';
     const icon = result == 'correct' ? '✔' : '✘';
-    const transform = { transform: [{ scale: 1.5 }] };
     const style = {
       color: COLOR_MAP[color[0]],
       backgroundColor: COLOR_MAP[color[1]],

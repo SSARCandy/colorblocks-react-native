@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    right: -5,
-    fontSize: 24,
+    right: -3,
+    fontSize: 28,
     textShadowColor: 'black',
     textShadowRadius: 10,
     textShadowOffset: {

@@ -1,58 +1,26 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 import Question from './Question';
 
 
 export default class QuestionsList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      listWidth: 0,
-      scrollViewWidth: 0
-    };
-    this.listWidthOld = 0;
-  }
-
-  componentDidUpdate() {
-    const {listWidth, scrollViewWidth} = this.state;
-
-    if (listWidth === this.listWidthOld) return;
-    this.listWidthOld = listWidth;
-
-    const rightOfList = listWidth - scrollViewWidth;
-    this.scrollView.scrollTo({
-      x: rightOfList,
-      animated: true 
-    });   
-  }
-
-  onLayout = (e) => {
-    const {width} = e.nativeEvent.layout;
-    this.setState({
-      scrollViewWidth: width
-    });
-  }
-
-  onContentSizeChange = (contentWidth, contentHeight) => {
-    const {listWidth} = this.state;
-
-    this.setState({
-      listWidth: contentWidth 
-    });
   }
 
   render() {
     const {questions, index} = this.props;
+    const {height, width} = Dimensions.get('window');
+    const middle = width/2 - 70;
+    const offset = index*140;
 
     return (
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        scrollEnabled={false}
-        horizontal={true}
-        onLayout={this.onLayout}
-        onContentSizeChange={this.onContentSizeChange}
-        ref={ (component) => this.scrollView = component }
-        contentContainerStyle={styles.listContainer}
+      <Animatable.View
+        transition='left'
+        easing='ease-in-out-cubic'
+        duration={500}
+        style={[styles.listContainer, {left: middle - offset}]}
       >
         {questions.map((q, idx) => {
           const {color, state} = q;
@@ -68,16 +36,18 @@ export default class QuestionsList extends Component {
             </View>
           );
         })}
-      </ScrollView>
+      </Animatable.View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   listContainer: {
-    alignItems: 'center'
+    alignItems: 'center',
+    flexDirection: 'row',
+    flex: 1,
   },
   container: {
-    margin: 15
+    margin: 20
   }
 });

@@ -52,3 +52,5 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 my-release-key.jks
+tsconfig.json
+react-native.d.ts

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Platform, StyleSheet, Text, View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { INIT_TIME, COMBO_BONUS } from '../constants';
 
@@ -15,6 +15,8 @@ export default class StatusPanel extends Component {
       color: time < 10 ? 'red' : 'black'
     };
     const timebarStyle = {
+      top: Platform.OS === 'ios' ? 20 : 0,
+      height: 5,
       width: time/INIT_TIME*width,
       backgroundColor: time < 10 ? 'red' : 'green'
     };
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     padding: 10,
-    width: 100,
+    width: 110,
     height: 50,
     color: 'black'
   },

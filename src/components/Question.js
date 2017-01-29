@@ -21,7 +21,7 @@ export default class Question extends Component {
   render() {
     const {color, result, bonus, focus, unfocus} = this.props;
     const resultStyle = result == 'correct' ? 'green' : 'red';
-    const icon = result == 'correct' ? '✔' : '✘';
+    const icon = result == 'correct' ? '✓' : '✘';
     const style = {
       color: COLOR_MAP[color[0]],
       backgroundColor: COLOR_MAP[color[1]],
@@ -40,15 +40,11 @@ export default class Question extends Component {
         <Animatable.View
           animation={transition || ''}
           duration={500}
-          style={focus ? {} : styles.masked}
+          style={styles.masked}
         >
-          <Animatable.Text
-            animation={transition || ''}
-            duration={500}
-            style={focus ? style : [style, {opacity: 0.5}]}
-          >
+          <Text style={focus ? style : [style, {opacity: 0.5}]}>
             {COLOR_LABEL_MAP[color[2]]}
-          </Animatable.Text>
+          </Text>
         </Animatable.View>
         {!!result && (<Text style={[styles.icon, {color: resultStyle}]}>{icon}</Text>)}
       </View>
@@ -67,8 +63,10 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    right: -3,
-    fontSize: 28,
+    right: -10,
+    fontSize: 32,
+    fontWeight: '700',
+    backgroundColor: 'rgba(0, 0, 0, 0)',
     textShadowColor: 'black',
     textShadowRadius: 10,
     textShadowOffset: {

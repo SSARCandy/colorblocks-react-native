@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     backgroundColor: 'black',
-    opacity: 0.8
+    opacity: 0.9
   },
   staticWrap: {
     margin: 10,

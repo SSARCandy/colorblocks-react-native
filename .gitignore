@@ -54,3 +54,5 @@ fastlane/screenshots
 my-release-key.jks
 tsconfig.json
 react-native.d.ts
+.vscode/
+jsconfig.json

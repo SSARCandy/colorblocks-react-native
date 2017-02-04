@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import {INIT_TIME, COMBO_THRES} from '../constants';
 import I18n from '../i18n';
 import Hr from 'react-native-hr';
+import Share from 'react-native-share';
 
 
 export default class End extends Component {
@@ -10,9 +11,22 @@ export default class End extends Component {
     super(props);
   }
 
+  share = (score) => {
+    let shareOptions = {
+      title: I18n.t('SHARE_TITLE'),
+      message: I18n.t('SHARE_CONTENT', {score: score}),
+      url: 'https://play.google.com/store/apps/details?id=com.colorblocksrn'
+    };
+
+    Share
+      .open(shareOptions)
+      .catch((err) => { err && console.log(err); })
+  }
+
   render() {
     const {handleRestart, answered, correct} = this.props;
     const accuracy = (correct / answered);
+    const score = Math.round(correct*accuracy);
 
     return (
       <View style={styles.overlay}>
@@ -28,8 +42,12 @@ export default class End extends Component {
               <Text style={styles.staticText}>{I18n.t('ACCURACY')}: {Math.round(accuracy * 100)}% </Text>
               <Hr lineColor='#000' text={`${I18n.t('SCORE')} (${I18n.t('CORRECT')} x ${I18n.t('ACCURACY')})`}/>
               <Text style={[styles.staticText, {fontSize: 32, fontWeight: '500'}]}>
-                {Math.round(correct*accuracy)}
+                {score}
               </Text>
+              <Button
+                onPress={() => { this.share(score); }}
+                title='share'
+              />
             </View>
           )}
           <View style={styles.startBtnWrap}>

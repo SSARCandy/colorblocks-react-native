@@ -27,6 +27,7 @@
 		BE9E2D250A534332A66CCA95 /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B3D9A3491E40358CDAB809 /* libyoga.a */; };
 		576F1A2FEE4B44C2B6A45F77 /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE23B9F8C7954435BBCE65BC /* libcxxreact.a */; };
 		6C7C1EF714F4450C82DFEC73 /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE442CD05214177B0304836 /* libjschelpers.a */; };
+		1FD522E810FC4CDFBC237B85 /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A001457FC4BE4133BE7C53D2 /* libRNShare.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +243,8 @@
 		54B3D9A3491E40358CDAB809 /* libyoga.a */ = {isa = PBXFileReference; name = "libyoga.a"; path = "libyoga.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		AE23B9F8C7954435BBCE65BC /* libcxxreact.a */ = {isa = PBXFileReference; name = "libcxxreact.a"; path = "libcxxreact.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		ECE442CD05214177B0304836 /* libjschelpers.a */ = {isa = PBXFileReference; name = "libjschelpers.a"; path = "libjschelpers.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		C212A943014F45E1A9D06A3B /* RNShare.xcodeproj */ = {isa = PBXFileReference; name = "RNShare.xcodeproj"; path = "../node_modules/react-native-share/ios/RNShare.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		A001457FC4BE4133BE7C53D2 /* libRNShare.a */ = {isa = PBXFileReference; name = "libRNShare.a"; path = "libRNShare.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,7 @@
 				BE9E2D250A534332A66CCA95 /* libyoga.a in Frameworks */,
 				576F1A2FEE4B44C2B6A45F77 /* libcxxreact.a in Frameworks */,
 				6C7C1EF714F4450C82DFEC73 /* libjschelpers.a in Frameworks */,
+				1FD522E810FC4CDFBC237B85 /* libRNShare.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +421,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				79D1542116CD4CB885504240 /* RNI18n.xcodeproj */,
+				C212A943014F45E1A9D06A3B /* RNShare.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -844,6 +849,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -860,6 +866,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/colorblocksRN.app/colorblocksRN";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

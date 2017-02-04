@@ -1,3 +1,5 @@
+import I18n from './i18n';
+
 export const KEY_COLOR_MAP = {
   38: 0, // up
   37: 1, // left
@@ -13,10 +15,10 @@ export const COLOR_MAP = [
 ];
 
 export const COLOR_LABEL_MAP = [
-  'RED',
-  'BLUE',
-  'GREEN',
-  'YELLOW'
+  I18n.t('RED'),
+  I18n.t('BLUE'),
+  I18n.t('GREEN'),
+  I18n.t('YELLOW'),
 ];
 
 export const INIT_TIME = 60;

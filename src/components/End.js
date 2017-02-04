@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import {INIT_TIME, COMBO_THRES} from '../constants';
+import I18n from '../i18n';
+
 
 export default class End extends Component {
   constructor(props) {
@@ -13,31 +15,22 @@ export default class End extends Component {
     return (
       <View style={styles.overlay}>
         <View style={styles.container}>
-          <Text style={{textAlign: 'center', fontSize:24}}>Welcome to ColorBlocks</Text>
-          <Text style={styles.text}>
-            Answer the color that didn't appear in Questions.
-          </Text>
-          <Text style={styles.text}>
-            You have {INIT_TIME} sec to answer these questions.
-          </Text>
-          <Text style={styles.text}>
-            You will get bonus time if you get {COMBO_THRES} combo corrects.
-          </Text>
-          <Text style={styles.text}>
-            Use arrow keys or click button to answer.
-          </Text>
+          <Text style={{textAlign: 'center', fontSize:24}}>{I18n.t('WELCOME')}</Text>
+          <Text style={styles.text}>{I18n.t('INTRO1')}</Text>
+          <Text style={styles.text}>{I18n.t('INTRO2')}</Text>
+          <Text style={styles.text}>{I18n.t('INTRO3')}</Text>
           {answered > 0 && (
             <View style={styles.staticWrap}>
-              <Text style={styles.staticText}>Total Questions: {answered} </Text>
-              <Text style={styles.staticText}>Correct: {correct} </Text>
-              <Text style={styles.staticText}>Wrong: {answered - correct} </Text>
-              <Text style={styles.staticText}>Accuracy: {Math.round((correct / answered) * 100)}% </Text>
+              <Text style={styles.staticText}>{I18n.t('TOTAL_QUESTIONS')}: {answered} </Text>
+              <Text style={styles.staticText}>{I18n.t('CORRECT')}: {correct} </Text>
+              <Text style={styles.staticText}>{I18n.t('WRONG')}: {answered - correct} </Text>
+              <Text style={styles.staticText}>{I18n.t('ACCURACY')}: {Math.round((correct / answered) * 100)}% </Text>
             </View>
           )}
           <View style={styles.startBtnWrap}>
             <Button
               onPress={handleRestart}
-              title={answered > 0 ? 'RESTART' : 'START'}
+              title={answered > 0 ? I18n.t('RESTART') : I18n.t('START')}
             />
           </View>
         </View>

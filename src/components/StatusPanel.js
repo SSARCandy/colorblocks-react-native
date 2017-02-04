@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Dimensions, Platform, StyleSheet, Text, View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { INIT_TIME, COMBO_BONUS } from '../constants';
+import I18n from '../i18n';
 
 export default class StatusPanel extends Component {
   constructor(props){
@@ -31,16 +32,16 @@ export default class StatusPanel extends Component {
           style={timebarStyle}
         />
         <View style={styles.statusWrap}>
-          <Text style={styles.status}>Scores: {score}</Text>
+          <Text style={styles.status}>{I18n.t('CORRECT')}: {score}</Text>
           {bonus && (
             <Animatable.Text
               animation='bounceIn'
               style={styles.bonus}
             >
-              +{COMBO_BONUS} BONUS TIME 
+              +{COMBO_BONUS} {I18n.t('BONUS_TIME')} 
             </Animatable.Text>
           )}
-          <Text style={styles.status}>Time: {time} s</Text>
+          <Text style={styles.status}>{I18n.t('TIME')}: {time} </Text>
         </View>
       </View>
     );

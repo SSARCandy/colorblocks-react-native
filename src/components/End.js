@@ -45,8 +45,9 @@ export default class End extends Component {
                 {score}
               </Text>
               <Button
+                color='#888'
                 onPress={() => { this.share(score); }}
-                title='share'
+                title={I18n.t('SHARE')}
               />
             </View>
           )}

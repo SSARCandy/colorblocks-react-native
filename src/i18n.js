@@ -20,6 +20,7 @@ I18n.translations = {
     BLUE: 'BLUE',
     GREEN: 'GREEN',
     YELLOW: 'YELLOW',
+    SHARE: 'Share',
     SHARE_TITLE: 'I got high score in ColorBlocks!',
     SHARE_CONTENT: 'I got %{score} points in ColorBlocks, come and beat me!'
   },
@@ -41,6 +42,7 @@ I18n.translations = {
     BLUE: '藍',
     GREEN: '綠',
     YELLOW: '黃',
+    SHARE: '分享',
     SHARE_TITLE: '我在 ColorBlocks 獲得高分！',
     SHARE_CONTENT: '我在 ColorBlocks 中得到了 %{score} 分，快來挑戰我吧！'
   }

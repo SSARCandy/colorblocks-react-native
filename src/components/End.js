@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import {INIT_TIME, COMBO_THRES} from '../constants';
 import I18n from '../i18n';
+import Hr from 'react-native-hr';
 
 
 export default class End extends Component {
@@ -11,6 +12,7 @@ export default class End extends Component {
 
   render() {
     const {handleRestart, answered, correct} = this.props;
+    const accuracy = (correct / answered);
 
     return (
       <View style={styles.overlay}>
@@ -23,8 +25,11 @@ export default class End extends Component {
             <View style={styles.staticWrap}>
               <Text style={styles.staticText}>{I18n.t('TOTAL_QUESTIONS')}: {answered} </Text>
               <Text style={styles.staticText}>{I18n.t('CORRECT')}: {correct} </Text>
-              <Text style={styles.staticText}>{I18n.t('WRONG')}: {answered - correct} </Text>
-              <Text style={styles.staticText}>{I18n.t('ACCURACY')}: {Math.round((correct / answered) * 100)}% </Text>
+              <Text style={styles.staticText}>{I18n.t('ACCURACY')}: {Math.round(accuracy * 100)}% </Text>
+              <Hr lineColor='#000' text={`${I18n.t('SCORE')} (${I18n.t('CORRECT')} x ${I18n.t('ACCURACY')})`}/>
+              <Text style={[styles.staticText, {fontSize: 32, fontWeight: '500'}]}>
+                {Math.round(correct*accuracy)}
+              </Text>
             </View>
           )}
           <View style={styles.startBtnWrap}>
@@ -68,7 +73,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   staticText: {
-    fontSize: 18,
-    fontWeight: '500'
+    fontSize: 14,
   }
 })
